@@ -2,12 +2,12 @@ Mebydesign::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  root 'static_pages#home'
+  root to: 'static_pages#home'
 
-  
-  # get "static_pages/home"
-  get "static_pages/about"
-  get "static_pages/how_to_order"
+  match '/about',        to: 'static_pages#about',            via: 'get'
+  match '/how_to_order', to: 'static_pages#how_to_order',     via: 'get'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
