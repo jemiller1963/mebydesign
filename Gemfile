@@ -22,7 +22,9 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 
 
-gem 'bootstrap-sass', '~>3.1.1'
+# gem 'bootstrap-sass', '2.3.2.0'
+gem 'anjlab-bootstrap-rails', '~> 3.0.0', :require => 'bootstrap-rails'
+gem 'sprockets', '2.11.0'
 
 group :development, :test do
 	gem 'guard'
