@@ -2,33 +2,38 @@ require 'spec_helper'
 
 describe "Static Page" do
 
+	subject { page }
+
 	let(:base_title) { "Me by Design" }
   
 	describe "Home page" do
 
 		before{ visit root_path }
 
-		it "should have the content 'Me by Design" do	  	
-		  	expect(page).to have_content('Me by Design')
-		end
+		it { should have_content('Me by Design')}
 
-		it "should have title base title " do
-		  	expect(page).to have_title("#{base_title} | Home")	  	
-		end
-	  
+		it { should have_title("#{ base_title } | Home")}
+
+			describe "Navigation" do
+				it { should have_selector( 'a', text: 'About')}
+				it { should have_selector( 'a', text: 'Events')}
+				it { should have_selector( 'a', text: 'Collections')}
+				it { should have_selector( 'a', text: 'NEW - One of a Kind')}
+				it { should have_selector( 'a', text: 'How to Order')}
+			end
+
+ 
 	end
 
 	describe "About page" do
 
 		before { visit about_path }
 
-	  	it "should have the content 'About Me by Design" do	  	
-	  		expect(page).to have_content('About Me by Design')
-	  	end
+		# it { should have_content('About Me by Design')}
 
-	  	it "should have the title 'About' " do
-	  		expect(page).to have_title("#{base_title} | About")
-	  	end
+		it { should have_title("#{ base_title } | About")}
+
+		it { should have_selector( 'h1', text: 'About Me by Design')}
 
 
 	end
@@ -37,13 +42,9 @@ describe "Static Page" do
 
 		before { visit how_to_order_path }
 
-	  	it "should have the content 'How to Order" do	  	
-	  		expect(page).to have_content('How to Order')
-	  	end
+		it { should have_content('How to Order')}
 
-	   	it "should have the title 'How to Order'" do
-	  		expect(page).to have_title("#{base_title} | How to Order")	  	
-	  	end
+		it { should have_title("#{ base_title } | How to Order")}
 
 
 	end

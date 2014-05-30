@@ -31,10 +31,20 @@ group :development, :test do
 	gem 'guard-livereload'
 	gem 'guard-rspec'
 	gem 'rspec-rails'
-	gem 'capybara'
-	gem 'factory_girl_rails'
-	gem 'database_cleaner'
 	gem 'shoulda-matchers'
+    gem 'spork-rails', '4.0.0'
+    gem 'guard-spork', '1.5.1'
+    gem 'childprocess', '0.3.6'
+end
+
+group :test do
+	  gem 'selenium-webdriver', '2.35.1'
+	  gem 'capybara'
+	  gem 'factory_girl_rails', '4.2.0'
+	  gem 'cucumber-rails', '1.3.0', :require => false
+	  gem 'database_cleaner', github: 'bmabey/database_cleaner'
+	  gem 'growl', '1.0.3'
+	  # gem 'growl_notify'
 end
 
 group :development do
