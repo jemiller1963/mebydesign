@@ -1,4 +1,7 @@
 Mebydesign::Application.routes.draw do
+
+  get "events/new"
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
@@ -6,6 +9,9 @@ Mebydesign::Application.routes.draw do
 
   match '/about',        to: 'static_pages#about',            via: 'get'
   match '/how_to_order', to: 'static_pages#how_to_order',     via: 'get'
+  match '/events',       to: 'events#new',                    via: 'get'
+
+  # resources :events
 
 
   # The priority is based upon order of creation: first created -> highest priority.
