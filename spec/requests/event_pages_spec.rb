@@ -2,9 +2,19 @@ require 'spec_helper'
 
 describe "Event Pages" do
 
+    before { visit events_path }
+
 	subject { page }
 
-  describe "List Events" do
+	describe "Navigation" do
+		it { should have_selector( 'a', text: 'About')}
+		it { should have_selector( 'a', text: 'Events')}
+		it { should have_selector( 'a', text: 'Collections')}
+		it { should have_selector( 'a', text: 'NEW - One of a Kind')}
+		it { should have_selector( 'a', text: 'How to Order')}
+	end	
+
+  describe "Add Events" do
 
     before { visit events_path}
 
@@ -15,7 +25,7 @@ describe "Event Pages" do
 
   end
 
-  describe "Add Events" do
+  describe "List Events" do
     
   end
 

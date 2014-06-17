@@ -35,7 +35,6 @@ describe "Static Page" do
 
 		it { should have_selector( 'h1', text: 'About Me by Design')}
 
-
 	end
 	
 	describe "How to Order page" do
@@ -46,7 +45,16 @@ describe "Static Page" do
 
 		it { should have_title("#{ base_title } | How to Order")}
 
+	end
 
+	describe "Events page" do
+
+		before { visit events_path }
+
+		it { should have_content('List of Events') }
+
+		it { should have_title("#{ base_title } | List of Events") }
+	  
 	end
 
 
