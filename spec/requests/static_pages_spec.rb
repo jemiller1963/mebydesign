@@ -47,15 +47,5 @@ describe "Static Page" do
 
 	end
 
-	describe "Events page" do
-
-		before { visit events_path }
-
-		it { should have_content('List of Events') }
-
-		it { should have_title("#{ base_title } | List of Events") }
-	  
-	end
-
 
 end
