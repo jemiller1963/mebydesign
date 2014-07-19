@@ -6,6 +6,8 @@ gem 'rails', '4.0.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+gem 'rake', '>= 10.3.2'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -21,10 +23,13 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-
 # gem 'bootstrap-sass', '2.3.2.0'
-gem 'anjlab-bootstrap-rails', '~> 3.0.0', :require => 'bootstrap-rails'
+gem 'anjlab-bootstrap-rails', '~> 3.0.3.0', :require => 'bootstrap-rails'
 gem 'sprockets', '2.11.0'
+
+gem 'will_paginate', '~> 3.0.7'
+gem 'bootstrap-will_paginate', '~> 0.0.10'
+gem 'simple_form', '~> 3.0.2'
 
 group :development, :test do
 	gem 'guard'
@@ -44,11 +49,13 @@ group :test do
 	  gem 'cucumber-rails', '1.3.0', :require => false
 	  gem 'database_cleaner', github: 'bmabey/database_cleaner'
 	  gem 'growl', '1.0.3'
+	  gem 'forgery', '~> 0.6.0'
+	  gem 'faker'
 	  # gem 'growl_notify'
 end
 
 group :development do
-	gem 'awesome_print'
+	gem 'awesome_print', '~> 1.2.0'
 	gem 'better_errors' # for debugging
 	gem "binding_of_caller"
 	gem 'meta_request'  # for debugging

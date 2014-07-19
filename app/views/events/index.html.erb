@@ -1,0 +1,23 @@
+<h2>List of Events</h2>
+<% if @events.empty? %>
+	<div>
+		<p>There are no Events</p>
+	</div>
+<% else %>
+<div class="panel panel-default">
+  	<div class="panel-body">
+	<%= will_paginate @events %>
+		<% @events.each do |e|  %>
+			<div style="margin-bottom: 20px">
+				<%= e.event_name %> <br />
+				<%= e.description %> <br />
+				<%= e.sdate.to_s(:my_date) %> <br />
+				<%= e.edate.to_s(:my_date) %> <br />
+				<%= e.link %> <br />
+				<%= link_to "Edit", edit_event_path(e) %>
+			</div>
+		<% end %>
+	<%= will_paginate %>
+	</div>
+</div>
+<% end %>

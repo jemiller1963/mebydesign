@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140617031901) do
+ActiveRecord::Schema.define(version: 20140705151429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "events", force: true do |t|
-    t.string   "event"
+    t.string   "event_name"
     t.text     "description"
     t.string   "link"
     t.datetime "sdate"
@@ -25,5 +25,7 @@ ActiveRecord::Schema.define(version: 20140617031901) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "events", ["sdate", "edate"], name: "index_events_on_sdate_and_edate", using: :btree
 
 end
