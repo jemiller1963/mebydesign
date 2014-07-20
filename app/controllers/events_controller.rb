@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-  	@events = Event.paginate(page: params[:page], per_page: 10)
+    @events = Event.paginate(page: params[:page], per_page: 10).where("active = ?", true)
   end
 
   def new
@@ -10,7 +10,7 @@ class EventsController < ApplicationController
   def show
     begin
       @event = Event.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
+      rescue ActiveRecord::RecordNotFound
       render :status => 404
     end
   end
@@ -23,7 +23,8 @@ class EventsController < ApplicationController
   	@event = Event.new(event_params)
   	if @event.save
   		flash[:success] = 'Event created successfully'
-  		redirect_to event_path(@event.id)
+  		# redirect_to event_path(@event.id)
+      redirect_to events_path
   	else
   		render 'new'
   	end
@@ -32,8 +33,8 @@ class EventsController < ApplicationController
   def update
   	@event = Event.find(params[:id])
   	if @event.update_attributes(event_params)
-  		flash[:success] = 'Event updated'
-  		redirect_to event_path
+  		flash[:success] = 'Event updated successfully'
+  		redirect_to events_path
   	else
   		render 'edit'
   	end
@@ -53,6 +54,7 @@ private
 										:description,
 										:sdate,
 										:edate,
-										:link)	
+										:link,
+                    :active)	
 	end
 end

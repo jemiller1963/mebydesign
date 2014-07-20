@@ -1,12 +1,3 @@
 <h2>Edit</h2>
 
-<%= simple_form_for(@event, html: {class: 'form-horizontal' }) do |f| %>
-
-		<%= f.input :event_name %> <br />
-		<%= f.input :description %> <br />
-		<%= f.input :sdate %> <br />
-		<%= f.input :edate %> <br />
-		<%= f.input :link %> 
-
-
-<% end %>
+<%= render 'form' %>

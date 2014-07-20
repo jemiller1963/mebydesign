@@ -6,15 +6,23 @@
 <% else %>
 <div class="panel panel-default">
   	<div class="panel-body">
-	<%= will_paginate @events %>
+		<div class="row">
+			<div class="col-md-10">
+				<%= will_paginate @events %>
+			</div>
+			<div class="col-md-2 new_btn">
+				<%= link_to "New Event", new_event_path, class: "btn btn-default" %>
+			</div>
+		</div>
 		<% @events.each do |e|  %>
 			<div style="margin-bottom: 20px">
-				<%= e.event_name %> <br />
-				<%= e.description %> <br />
-				<%= e.sdate.to_s(:my_date) %> <br />
-				<%= e.edate.to_s(:my_date) %> <br />
-				<%= e.link %> <br />
-				<%= link_to "Edit", edit_event_path(e) %>
+					<%= link_to e.event_name, "http://#{e.link}", 	target: "_blank", 
+														 			 class: "lead" %> <br />
+					<%= e.description %> <br />
+					Event starts on <strong><%= e.sdate.to_s(:my_date) %></strong> <br />
+					Event ends on <strong><%= e.edate.to_s(:my_date) %></strong> <br />
+					<%=  %> 
+					<small><%= link_to "Edit", edit_event_path(e) %></small>
 			</div>
 		<% end %>
 	<%= will_paginate %>

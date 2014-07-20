@@ -58,7 +58,7 @@ group :development do
 	gem 'awesome_print', '~> 1.2.0'
 	gem 'better_errors' # for debugging
 	gem "binding_of_caller"
-	gem 'meta_request'  # for debugging
+	gem 'meta_request', '~> 0.3.3'  # for debugging
 end
 
 

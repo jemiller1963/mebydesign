@@ -79,6 +79,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 	<div class="container">
+    <p><%= flash_messages if show_layout_flash? %></p>
 		<%= yield %>
 	</div>
 
