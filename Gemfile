@@ -31,6 +31,9 @@ gem 'will_paginate', '~> 3.0.7'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'simple_form', '~> 3.0.2'
 
+# for Heroku
+gem 'rails_12factor', :group => [:production, :staging]
+
 group :development, :test do
 	gem 'guard'
 	gem 'guard-livereload'
