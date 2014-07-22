@@ -33,6 +33,7 @@ gem 'simple_form', '~> 3.0.2'
 
 # for Heroku
 gem 'rails_12factor', :group => [:production, :staging]
+gem 'faker'
 
 group :development, :test do
 	gem 'guard'
@@ -53,7 +54,7 @@ group :test do
 	  gem 'database_cleaner', github: 'bmabey/database_cleaner'
 	  gem 'growl', '1.0.3'
 	  gem 'forgery', '~> 0.6.0'
-	  gem 'faker'
+	  # gem 'faker'
 	  # gem 'growl_notify'
 end
 
