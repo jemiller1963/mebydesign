@@ -35,6 +35,9 @@ gem 'simple_form', '~> 3.0.2'
 gem 'rails_12factor', :group => [:production, :staging]
 gem 'faker'
 
+# for authentication
+gem 'devise', '~> 3.2.4' 
+
 group :development, :test do
 	gem 'guard'
 	gem 'guard-livereload'

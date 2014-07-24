@@ -5,14 +5,19 @@ body {
 #flash-notice {
   @extend .alert;
   @extend .alert-success;
+  @extend .alert-alert;
 }
 #flash-error, #flash-alert {
   @extend .alert;
   @extend .alert-danger;
+  @extend .alert-notice;
+  @extend .alert-alert;
+  // @extend .alert-error;
 }
 #flash-warning {
   @extend .alert;
   @extend .alert-warning;
+  @extend .alert-alert;
 }
 
 .new_btn {

@@ -1,5 +1,6 @@
 Mebydesign::Application.routes.draw do
 
+  devise_for :users
   get "events/new"
 
   # You can have the root of your site routed with "root"

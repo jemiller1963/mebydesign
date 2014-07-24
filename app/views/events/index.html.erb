@@ -7,7 +7,9 @@
 				There are no Events
 			</div>
 			<div class="col-md-2 new_btn">
-				<%= link_to "New Event", new_event_path, class: "btn btn-default" %>
+				<% if user_signed_in? %>
+					<%= link_to "New Event", new_event_path, class: "btn btn-default" %>
+				<% end %>
 			</div>
 		</div>
 <% else %>
@@ -18,7 +20,9 @@
 				<%= will_paginate @events %>
 			</div>
 			<div class="col-md-2 new_btn">
-				<%= link_to "New Event", new_event_path, class: "btn btn-default" %>
+				<% if user_signed_in? %>
+					<%= link_to "New Event", new_event_path, class: "btn btn-default" %>
+				<% end %>
 			</div>
 		</div>
 		<% @events.each do |e|  %>
@@ -28,8 +32,9 @@
 					<%= e.description %> <br />
 					Event starts on <strong><%= e.sdate.to_s(:my_date) %></strong> <br />
 					Event ends on <strong><%= e.edate.to_s(:my_date) %></strong> <br />
-					<%=  %> 
-					<small><%= link_to "Edit", edit_event_path(e) %></small>
+					<% if user_signed_in? %>
+						<small><%= link_to "Edit", edit_event_path(e) %></small>
+					<% end %>
 			</div>
 		<% end %>
 	<%= will_paginate %>
