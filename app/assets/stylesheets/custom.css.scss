@@ -33,7 +33,10 @@ body {
   // @extend .alert-alert;
 }
 
-
+.help-inline {
+	@extend label;
+	@extend label-danger;
+}
 .new_btn {
 	 margin-top: 40px;
 }
