@@ -34,8 +34,8 @@ body {
 }
 
 .help-inline {
-	@extend label;
-	@extend label-danger;
+	@extend .label;
+	@extend .label-danger;
 }
 .new_btn {
 	 margin-top: 40px;
