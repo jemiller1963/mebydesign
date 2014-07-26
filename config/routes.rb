@@ -1,6 +1,13 @@
 Mebydesign::Application.routes.draw do
 
-  devise_for :users
+  # devise_for :users
+
+  if Rails.env.production?
+    devise_for :users, :controllers => { :registrations => "registrations" } 
+  else
+    devise_for :users
+  end
+
   get "events/new"
 
   # You can have the root of your site routed with "root"

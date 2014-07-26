@@ -2,23 +2,37 @@ body {
   padding-top: 20px;
 }
 
+.collapse {
+	margin: 0 140px 0 0;
+}
+
+.navbar-header {
+	margin: 0 0 0 130px;
+}
+
 #flash-notice {
   @extend .alert;
   @extend .alert-success;
-  @extend .alert-alert;
 }
+
+
 #flash-error, #flash-alert {
   @extend .alert;
   @extend .alert-danger;
   @extend .alert-notice;
-  @extend .alert-alert;
-  // @extend .alert-error;
 }
+
+.alert-notice {
+	@extend .alert-success;
+}
+
+
 #flash-warning {
   @extend .alert;
   @extend .alert-warning;
-  @extend .alert-alert;
+  // @extend .alert-alert;
 }
+
 
 .new_btn {
 	 margin-top: 40px;
